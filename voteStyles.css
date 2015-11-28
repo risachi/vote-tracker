@@ -1,0 +1,22 @@
+body {
+  background-image: linear-gradient( rgba(0, 0, 0, .1), rgba(0, 0, 0, .1) ), url("background.jpg");
+}
+
+h1 {
+  font-family: 'Titan One', cursive;
+}
+
+h3 {
+  font-family: 'Hind', sans-serif;
+}
+
+h4 {
+  font-family: 'Muli', sans-serif;
+}
+
+#veryBottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
