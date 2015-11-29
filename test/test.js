@@ -11,10 +11,23 @@ describe('util.js', function() {
       expect( util.takeOne(names) ).to.be(null);
     });
 
-    xit('deletes the last element of a one-element array', function() {
+    it('deletes the last element of a one-element array', function() {
       var names = ['Lisa'];
       util.takeOne(names);
       expect( names.length ).to.be(0);
+    });
+
+    it('deletes ONLY the element it returns', function() {
+      var names = ['Lisa', 'Robb'];
+      var chosen_name = util.takeOne(names);
+      var remaining_name = names[0];
+      expect( chosen_name ).not.to.be( remaining_name );
+    });
+
+    it ('removes only one item from the array', function() {
+      var arr = [1,2,3,4,5,6,7,8,9,10];
+      util.takeOne(arr);
+      expect( arr.length ).to.be( 9 );
     });
 
   });
