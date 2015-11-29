@@ -1,5 +1,5 @@
-var foodClicks = 0
-var pandaClicks = 0
+var foodClicks = 0;
+var pandaClicks = 0;
 var oneFood, onePanda;
 
 var food = [
@@ -29,20 +29,21 @@ var pandas = [
 ];
 
 function voteImage(name, location) {
-  this.name = name
-  this.location = location
-};
+  this.name = name;
+  this.location = location;
+}
 
-oneFood = takeOne(food)
-onePanda = takeOne(pandas)
+oneFood = takeOne(food);
+onePanda = takeOne(pandas);
 
 function showResults() {
   //show total results of voting
 }
 
 function showChoice() {
-  window.print(oneFood, onePanda)
+
 }
+$(document.body).append('hello');
 
 // if food.length = 0 {
 //   showResults()

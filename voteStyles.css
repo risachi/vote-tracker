@@ -4,14 +4,23 @@
 
 h1 {
   font-family: 'Titan One', cursive;
+  font-size: 400%;
+  text-align: center;
 }
 
 h3 {
   font-family: 'Hind', sans-serif;
+  font-size: 150%;
+  text-align: center;
 }
 
 h4 {
   font-family: 'Muli', sans-serif;
+  text-align: center;
+}
+
+#choices {
+  text-align: center;
 }
 
 #veryBottom {
