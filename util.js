@@ -1,6 +1,6 @@
 function takeOne(arr) {
   if (arr.length === 0) {
-    return null;
+    return undefined;
   } else {
     var randomIndex = Math.floor(Math.random()*arr.length);
     var randomItem  = arr[randomIndex];

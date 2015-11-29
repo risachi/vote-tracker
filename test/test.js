@@ -6,9 +6,9 @@ describe('util.js', function() {
       expect( util.takeOne(names) ).to.be('Lisa');
     });
 
-    it('returns null if the array is empty', function() {
+    it('returns undefined if the array is empty', function() {
       var names = [];
-      expect( util.takeOne(names) ).to.be(null);
+      expect( util.takeOne(names) ).to.be(undefined);
     });
 
     it('deletes the last element of a one-element array', function() {
