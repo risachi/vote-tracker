@@ -1,9 +1,11 @@
 function takeOne(arr) {
-  var randomIndex = Math.floor(Math.random() * arr.length);
-  // Delete it from the array
-  return arr.splice(randomIndex, 1)[0];
+  var deletedItems = arr.splice(randomIndex(arr), 1);
+  return deletedItems[0];
 }
 
+function randomIndex(arr) {
+  Math.floor(Math.random() * arr.length);
+}
 
 // Configuration
 exports._test = {
