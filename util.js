@@ -1,14 +1,10 @@
 function takeOne(arr) {
-  if (arr.length === 0) {
-    return undefined;
-  } else {
-    var randomIndex = Math.floor(Math.random()*arr.length);
-    var randomItem  = arr[randomIndex];
-    // Delete it from the array
-    arr.splice(randomIndex, 1);
-    // Return the item
-    return randomItem;
-  }
+  var randomIndex = Math.floor(Math.random() * arr.length);
+  var randomItem = arr[randomIndex];
+  // Delete it from the array
+  arr.splice(randomIndex, 1);
+  // Return the item
+  return randomItem;
 }
 
 
