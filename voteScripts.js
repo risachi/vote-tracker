@@ -14,10 +14,12 @@ function setUpEvents() {
   $('#food').on('click', function() {
     foodClicks++;
     takeOneAndShowChoice();
+    showChart();
   });
   $('#panda').on('click', function() {
     pandaClicks++;
     takeOneAndShowChoice();
+    showChart();
   });
 }
 
@@ -29,8 +31,8 @@ function showResults() {
 //
 // Data
 //
-var foodClicks = 3;
-var pandaClicks = 4;
+var foodClicks = 0;
+var pandaClicks = 0;
 
 var oneFood, onePanda;
 

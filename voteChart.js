@@ -4,6 +4,10 @@
 
 
 $(function () {
+  showChart();
+});
+
+function showChart() {
 	$("#chart").CanvasJSChart({ //Pass chart options
     title: {
       text: "Results"
@@ -19,4 +23,4 @@ $(function () {
 			{ label: "Pandas", y: pandaClicks }
 		]}]
   });
-});
+};
