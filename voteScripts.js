@@ -1,5 +1,9 @@
-var foodClicks = 0;
-var pandaClicks = 0;
+$(function() {
+  showChoice();
+});
+
+var foodClicks = 3;
+var pandaClicks = 4;
 var oneFood, onePanda;
 
 var food = [
@@ -20,7 +24,7 @@ var pandas = [
   new voteImage("blepPanda.jpg", "images/blepPanda.jpg"),
   new voteImage("curlyPanda.jpg", "images/curlyPanda.jpg"),
   new voteImage("happyPanda.jpg", "images/happyPanda.jpg"),
-  new voteImage("laughyPandajpg", "images/laughyPandajpg"),
+  new voteImage("laughyPandajpg", "images/laughyPanda.jpg"),
   new voteImage("sadPanda.jpg", "images/sadPanda.jpg"),
   new voteImage("sleepyPanda.jpg", "images/sleepyPanda.jpg"),
   new voteImage("smirkyPanda.jpg", "images/smirkyPanda.jpg"),
@@ -41,12 +45,6 @@ function showResults() {
 }
 
 function showChoice() {
-
+  $('#food').attr('src', oneFood.location);
+  $('#panda').attr('src', onePanda.location);
 }
-$(document.body).append('hello');
-
-// if food.length = 0 {
-//   showResults()
-// } else {
-//   showChoice(oneFood, onePanda)
-// };
