@@ -1,3 +1,8 @@
+var foodClicks = 0;
+var pandaClicks = 0;
+var oneFood, onePanda;
+
+
 $(function() {
   takeOneAndShowChoice();
   setUpEvents();
@@ -6,6 +11,11 @@ $(function() {
 function takeOneAndShowChoice() {
   oneFood = takeOne(food);
   onePanda = takeOne(pandas);
+  if (typeof oneFood === 'undefined') {
+    $('#food, #panda').off('click')
+    return;
+  };
+
   $('#food').attr('src', oneFood.location);
   $('#panda').attr('src', onePanda.location);
 }
@@ -13,28 +23,24 @@ function takeOneAndShowChoice() {
 function setUpEvents() {
   $('#food').on('click', function() {
     foodClicks++;
-    takeOneAndShowChoice();
-    showChart();
+    refreshScreen();
   });
   $('#panda').on('click', function() {
     pandaClicks++;
-    takeOneAndShowChoice();
-    showChart();
+    refreshScreen();
   });
 }
 
-function showResults() {
-  //show total results of voting
+function refreshScreen() {
+  takeOneAndShowChoice();
+  showChart();
 }
+
 
 
 //
 // Data
 //
-var foodClicks = 0;
-var pandaClicks = 0;
-
-var oneFood, onePanda;
 
 function voteImage(name, location) {
   this.name = name;
