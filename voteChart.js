@@ -6,7 +6,7 @@
 $(function () {
 	$("#chart").CanvasJSChart({ //Pass chart options
     title: {
-      text: "Donuts"
+      text: "Results"
     },
     axisY: {
       title: "Number of Votes",
@@ -15,8 +15,8 @@ $(function () {
 		data: [{
 		type: "column", //change it to column, spline, line, pie, etc
 		dataPoints: [
-			{ label: food[voteImage.name], y: foodClicks },
-			{ label: pandas[voteImage.name], y: pandaClicks }
+			{ label: "Food", y: foodClicks },
+			{ label: "Pandas", y: pandaClicks }
 		]}]
   });
 });

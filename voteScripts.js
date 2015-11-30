@@ -1,10 +1,43 @@
 $(function() {
-  showChoice();
+  takeOneAndShowChoice();
+  setUpEvents();
 });
 
+function takeOneAndShowChoice() {
+  oneFood = takeOne(food);
+  onePanda = takeOne(pandas);
+  $('#food').attr('src', oneFood.location);
+  $('#panda').attr('src', onePanda.location);
+}
+
+function setUpEvents() {
+  $('#food').on('click', function() {
+    foodClicks++;
+    takeOneAndShowChoice();
+  });
+  $('#panda').on('click', function() {
+    pandaClicks++;
+    takeOneAndShowChoice();
+  });
+}
+
+function showResults() {
+  //show total results of voting
+}
+
+
+//
+// Data
+//
 var foodClicks = 3;
 var pandaClicks = 4;
+
 var oneFood, onePanda;
+
+function voteImage(name, location) {
+  this.name = name;
+  this.location = location;
+}
 
 var food = [
   new voteImage("foodApple.jpg", "images/foodApple.jpg"),
@@ -31,20 +64,3 @@ var pandas = [
   new voteImage("stalkyPanda.jpg", "images/stalkyPanda.jpg"),
   new voteImage("surprisePanda.jpg", "images/surprisePanda.jpg"),
 ];
-
-function voteImage(name, location) {
-  this.name = name;
-  this.location = location;
-}
-
-oneFood = takeOne(food);
-onePanda = takeOne(pandas);
-
-function showResults() {
-  //show total results of voting
-}
-
-function showChoice() {
-  $('#food').attr('src', oneFood.location);
-  $('#panda').attr('src', onePanda.location);
-}
