@@ -21,14 +21,21 @@ function showChart() {
     }]
   };
 
-  var dataPoints = [{
-    label: "Food",
-    y: foodClicks
-  }, {
-    label: "Pandas",
-    y: pandaClicks
-  }];
+  var dataPoints = [];
+  if ($('#foodBox').prop('checked')) {
+    dataPoints.push({
+      label: "Food",
+      y: foodClicks
+    });
+  }
+  if ($('#pandaBox').prop('checked')) {
+    dataPoints.push({
+      label: "Pandas",
+      y: pandaClicks
+    });
+  }
 
+  log(dataPoints);
   chartObject.data.push( {dataPoints: dataPoints} );
 
   $("#chart").CanvasJSChart(chartObject);
