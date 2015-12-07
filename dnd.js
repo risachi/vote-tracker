@@ -24,8 +24,19 @@ function drop(e) {
     log('drop target: ' + e.target.id);
     log('drag source: ' + dragSrcEl.id);
 
-    dragSrcEl.innerHTML = e.target.innerHTML;
-    e.target.innerHTML = e.dataTransfer.getData('text/html');
+    swapImages();
   }
   return false;
+}
+
+//*~*~*~*~*~*~*~*~*~*~*~*~*~**~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+
+function swapImages() {
+  //remove child
+  var removeEl = document.getElementsByTagName('img')[0];
+  var containerEl = removeEl.parentNode;
+  containerEl.removeChild(removeEl);
+
+  //append child
+  containerEl.appendChild(removeEl);
 }
