@@ -1,5 +1,5 @@
-var foodClicks = 0;
-var pandaClicks = 0;
+localStorage.foodClicks = 0;
+localStorage.pandaClicks = 0;
 var oneFood, onePanda;
 DEBUG = true;
 
@@ -23,11 +23,11 @@ function takeOneAndShowChoice() {
 
 function setUpEvents() {
   $('#food').on('click', function() {
-    foodClicks++;
+    localStorage.foodClicks++;
     refreshScreen();
   });
   $('#panda').on('click', function() {
-    pandaClicks++;
+    localStorage.pandaClicks++;
     refreshScreen();
   });
 }
