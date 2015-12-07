@@ -9,7 +9,6 @@ function drag(e) {
   log('drag(' + e.target.id + ')');
 
   dragSrcEl = e.target;
-  e.dataTransfer.setData('text/html', e.target.innerHTML);
 }
 
 function drop(e) {

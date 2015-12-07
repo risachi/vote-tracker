@@ -8,7 +8,7 @@ $(function () {
 });
 
 function showChart() {
-	$("#chart").CanvasJSChart({ //Pass chart options
+  $("#chart").CanvasJSChart({ //Pass chart options
     title: {
       text: "Results"
     },
@@ -16,11 +16,15 @@ function showChart() {
       title: "Number of Votes",
       includeZero: true
     },
-		data: [{
-		type: "column", //change it to column, spline, line, pie, etc
-		dataPoints: [
-			{ label: "Food", y: foodClicks },
-			{ label: "Pandas", y: pandaClicks }
-		]}]
+    data: [{
+      type: "column", //change it to column, spline, line, pie, etc
+      dataPoints: [{
+        label: "Food",
+        y: foodClicks
+      }, {
+        label: "Pandas",
+        y: pandaClicks
+      }]
+    }]
   });
 }
