@@ -8,7 +8,7 @@ $(function () {
 });
 
 function showChart() {
-  $("#chart").CanvasJSChart({ //Pass chart options
+  var chartObject = { //Pass chart options
     title: {
       text: "Results"
     },
@@ -18,13 +18,18 @@ function showChart() {
     },
     data: [{
       type: "column", //change it to column, spline, line, pie, etc
-      dataPoints: [{
-        label: "Food",
-        y: foodClicks
-      }, {
-        label: "Pandas",
-        y: pandaClicks
-      }]
     }]
-  });
+  };
+
+  var dataPoints = [{
+    label: "Food",
+    y: foodClicks
+  }, {
+    label: "Pandas",
+    y: pandaClicks
+  }];
+
+  chartObject.data.push( {dataPoints: dataPoints} );
+
+  $("#chart").CanvasJSChart(chartObject);
 }
