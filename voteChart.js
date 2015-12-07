@@ -23,4 +23,4 @@ function showChart() {
 			{ label: "Pandas", y: pandaClicks }
 		]}]
   });
-};
+}

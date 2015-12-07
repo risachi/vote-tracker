@@ -1,6 +1,7 @@
 var foodClicks = 0;
 var pandaClicks = 0;
 var oneFood, onePanda;
+DEBUG = true;
 
 
 $(function() {
@@ -12,9 +13,9 @@ function takeOneAndShowChoice() {
   oneFood = takeOne(food);
   onePanda = takeOne(pandas);
   if (typeof oneFood === 'undefined') {
-    $('#food, #panda').off('click')
+    $('#food, #panda').off('click');
     return;
-  };
+  }
 
   $('#food').attr('src', oneFood.location);
   $('#panda').attr('src', onePanda.location);
@@ -36,7 +37,12 @@ function refreshScreen() {
   showChart();
 }
 
-
+//
+//
+//
+function log(something) {
+  if (DEBUG) console.log(something);
+}
 
 //
 // Data
