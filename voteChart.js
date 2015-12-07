@@ -5,6 +5,7 @@
 
 $(function () {
   showChart();
+  eventHandler();
 });
 
 function showChart() {
@@ -39,4 +40,14 @@ function showChart() {
   chartObject.data.push( {dataPoints: dataPoints} );
 
   $("#chart").CanvasJSChart(chartObject);
+}
+
+
+function eventHandler() {
+  $('#foodBox').change(function() {
+    showChart();
+  });
+  $('#pandaBox').change(function() {
+    showChart();
+  });
 }
