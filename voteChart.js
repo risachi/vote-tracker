@@ -26,13 +26,13 @@ function showChart() {
   if ($('#foodBox').prop('checked')) {
     dataPoints.push({
       label: "Food",
-      y: localStorage.foodClicks
+      y: parseInt(localStorage.foodClicks)
     });
   }
   if ($('#pandaBox').prop('checked')) {
     dataPoints.push({
       label: "Pandas",
-      y: localStorage.pandaClicks
+      y: parseInt(localStorage.pandaClicks)
     });
   }
 
