@@ -1,6 +1,6 @@
 
-localStorage.foodClicks = 0;
-localStorage.pandaClicks = 0;
+// localStorage.foodClicks = 0;
+// localStorage.pandaClicks = 0;
 
 var oneFood, onePanda;
 DEBUG = true;
