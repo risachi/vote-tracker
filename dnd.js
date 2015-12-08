@@ -24,6 +24,7 @@ function drop(e) {
     log('drag source: ' + dragSrcEl.id);
 
     swapImages();
+    showChart();
   }
   return false;
 }

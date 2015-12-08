@@ -3,7 +3,7 @@
 // })
 
 
-$(function () {
+$(function() {
   showChart();
   eventHandler();
 });
@@ -23,25 +23,45 @@ function showChart() {
   };
 
   var dataPoints = [];
-  if ($('#foodBox').prop('checked')) {
-    dataPoints.push({
-      label: "Food",
-      y: parseInt(localStorage.foodClicks)
-    });
-  }
-  if ($('#pandaBox').prop('checked')) {
-    dataPoints.push({
-      label: "Pandas",
-      y: parseInt(localStorage.pandaClicks)
-    });
+  if (foodIsFirst()) {
+    if ($('#foodBox').prop('checked')) {
+      dataPoints.push({
+        label: "Food",
+        y: parseInt(localStorage.foodClicks)
+      });
+    }
+    if ($('#pandaBox').prop('checked')) {
+      dataPoints.push({
+        label: "Pandas",
+        y: parseInt(localStorage.pandaClicks)
+      });
+    }
+  } else {
+    if ($('#pandaBox').prop('checked')) {
+      dataPoints.push({
+        label: "Panda",
+        y: parseInt(localStorage.pandaClicks)
+      });
+    }
+    if ($('#foodBox').prop('checked')) {
+      dataPoints.push({
+        label: "Food  ",
+        y: parseInt(localStorage.foodClicks)
+      });
+    }
   }
 
   log(dataPoints);
-  chartObject.data.push( {dataPoints: dataPoints} );
+  chartObject.data.push({
+    dataPoints: dataPoints
+  });
 
   $("#chart").CanvasJSChart(chartObject);
 }
 
+function foodIsFirst() {
+  return $('img')[0].id === 'food';
+}
 
 function eventHandler() {
   $('#foodBox').change(function() {
