@@ -1,6 +1,7 @@
-
-// localStorage.foodClicks = 0;
-// localStorage.pandaClicks = 0;
+if (typeof localStorage.foodClicks === 'undefined') {
+  localStorage.foodClicks = 0;
+  localStorage.pandaClicks = 0;
+}
 
 var oneFood, onePanda;
 DEBUG = true;
