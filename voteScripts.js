@@ -1,4 +1,4 @@
-if (typeof localStorage.foodClicks === 'undefined') {
+if ((typeof localStorage.foodClicks === 'undefined') || (localStorage.foodCllicks === 'NaN')) {
   localStorage.foodClicks = 0;
   localStorage.pandaClicks = 0;
 }
