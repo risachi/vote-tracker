@@ -12,6 +12,7 @@
     <script src="util.js"></script>
     <script src="voteScripts.js"></script>
     <script src="voteChart.js"></script>
+    <script src="dnd.js"></script>
 
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -26,9 +27,29 @@
     <h3>Simply choose the one that is BETTER</h3>
 
     <div id=choices>
-      <img id=food src="">
-      <img id=panda src="">
+      <img id=food
+           draggable=true
+           ondragstart='drag(event)'
+           ondrop='drop(event)'
+           ondragover='allowDrop(event)'>
+      <img id=panda
+           draggable=true
+           ondragstart='drag(event)'
+           ondrop='drop(event)'
+           ondragover='allowDrop(event)'>
     </div>
+
+    <form class="pure-form">
+      <label for="option-one" class="pure-checkbox">
+        <input id="foodBox" type="checkbox" value="" checked>
+        Show/hide food
+      </label>
+
+      <label for="option-two" class="pure-checkbox">
+        <input id="pandaBox" type="checkbox" value="" checked>
+        Show/hide panda
+      </label>
+    </form>
 
     <div id=spacing>
     </div>
